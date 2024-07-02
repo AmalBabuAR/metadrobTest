@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  background-color: #33334c;
+}
+
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #33334c;
+}
+
+.toggleSection {
+  display: flex;
+  justify-content: center;
+}
+
+.toggleContainer {
+  margin: 10px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 200px;
+  border: 3px solid #343434;
+  border-radius: 20px;
+  background: #343434;
+  font-weight: bold;
+  color: #343434;
+  cursor: pointer;
+}
+.toggleContainer::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0%;
+  border-radius: 20px;
+  background: white;
+  transition: all 0.3s;
+}
+.toggleCheckbox:checked + .toggleContainer::before {
+  left: 50%;
+}
+.toggleContainer div {
+  padding: 6px;
+  text-align: center;
+  z-index: 1;
+}
+.toggleCheckbox {
+  display: none;
+}
+.toggleCheckbox:checked + .toggleContainer div:first-child {
+  color: white;
+  transition: color 0.3s;
+}
+.toggleCheckbox:checked + .toggleContainer div:last-child {
+  color: #343434;
+  transition: color 0.3s;
+}
+.toggleCheckbox + .toggleContainer div:first-child {
+  color: #343434;
+  transition: color 0.3s;
+}
+.toggleCheckbox + .toggleContainer div:last-child {
+  color: white;
+  transition: color 0.3s;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  border: #ddd 1px solid;
+  padding: 10px;
+}
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: #0075ff;
+  width: max-content;
+  padding: 0 10px;
+  height: 40px;
+  border: transparent;
+  color: white;
+  border-radius: 8px;
+}
+
+input[type="range"] {
+  margin: 5px;
+  width: 200px;
+  height: 30px;
+  background: #ddd;
+  outline: none;
+  border-radius: 8px;
+  /* opacity: 0.7; */
+  transition: opacity 0.2s;
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  width: 50px;
+  height: 30px;
+  margin: 5px;
+  background: #ddd;
+  outline: none;
+  border-radius: 8px;
+  border: transparent;
+  padding-left: 8px;
+}
